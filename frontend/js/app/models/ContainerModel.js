@@ -7,7 +7,8 @@ define(function(require){
 			sync: function (method, model, options){
 				if (method === 'read'){
 					options.success();
-					this.trigger('change');
+					this.trigger('change:game');
+					this.trigger('change:page');
 				}
 			}
 		}),

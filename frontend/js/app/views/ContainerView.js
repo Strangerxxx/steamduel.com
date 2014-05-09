@@ -8,8 +8,8 @@ define(function(require){
 
 	return Backbone.View.extend({
 		initialize: function(){
-			this.model.on('change', this.activesChange, this);
-			//this.model.on('page:change', this.pageChange, this);
+			this.model.on('change:game', this.gameChange, this);
+			this.model.on('change:page', this.pageChange, this);
 		},
 		render: function(){
 			this.$el.html(template());
@@ -19,10 +19,15 @@ define(function(require){
 			'click .game-nav li a': 'gameSelect',
 			'click .page-nav li a': 'pageSelect'
 		},
-		activesChange: function(){
-			console.log(this.model);
+		gameChange: function(){
+			console.log('-'+this.model.previous('game'));
+			console.log('+'+this.model.get('game'));
 			$('.game-nav li a[data-game='+this.model.get('game')+']').parent().addClass('active');
 			$('.game-nav li a[data-game='+this.model.previous('game')+']').parent().removeClass('active');
+		},
+		pageChange: function(){
+			console.log('-'+this.model.previous('page'));
+			console.log('+'+this.model.get('page'));
 			$('.page-nav li a[data-page='+this.model.get('page')+']').parent().addClass('active');
 			$('.page-nav li a[data-page='+this.model.previous('page')+']').parent().removeClass('active');
 		},
