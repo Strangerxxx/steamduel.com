@@ -31,14 +31,14 @@ define(function(require){
 							containerView.render();
 							
 							$container = $("#container", containerView.el);
-							/*var pageModel = new models.Page();
+							var pageModel = new models.Page();
 							console.log(pageModel);
 							pageModel.fetch({
 								success: function(data){
 									var pageView = new PageView({model: data, el: $container});
 									pageView.render();
 								}
-							});*/
+							});
 						}
 					});
 				});
