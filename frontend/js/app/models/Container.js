@@ -2,17 +2,16 @@ define(function(require){
 	var $			= require('jquery'),
 		Backbone	= require('backbone'),
 
-		Container = Backbone.Model.extend({
-			initialize: function(){},
+		Page = Backbone.Model.extend({
+			initialize: function(){this.hello = 'world'},
 			sync: function (method, model, options){
 				if (method === 'read'){
 					options.success();
-					this.trigger('change:game');
-					this.trigger('change:page');
 				}
 			}
 		}),
-		Page = Backbone.Collection.extend({
+		Main = Backbone.Collection.extend({
+			model: Page,
 			sync: function(method, model, options){
 				//console.log(this.model);
 				if (method === 'read'){
@@ -21,7 +20,7 @@ define(function(require){
 			}
 		});
 		return {
-			Container: Container,
-			Page: Page
+			Page: Page,
+			Main: Main
 		}
 });
