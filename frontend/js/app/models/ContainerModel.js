@@ -13,7 +13,6 @@ define(function(require){
 			}
 		}),
 		Page = Backbone.Collection.extend({
-			model: Container,
 			sync: function(method, model, options){
 				//console.log(this.model);
 				if (method === 'read'){
