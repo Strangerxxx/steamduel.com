@@ -17,10 +17,12 @@ define(function(require){
 		},
 		gameSelect: function(e){
 			var game = $(e.currentTarget).data('game');
-			//console.log(this.router.execute(this.router.handler, {game: game}));
-			console.log(this.router.navigate('!/'+game, {trigger: true}));
+			var router = this.router;
+			this.$el.animate({'opacity': '0'}, 200, function(){
+				//console.log(this.router.execute(this.router.handler, {game: game}));
+				console.log(router.navigate('!/'+game, {trigger: true}));
+			});
 			console.log(game);
 		}
-
 	});
 });

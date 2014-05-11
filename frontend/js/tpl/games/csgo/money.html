@@ -1,0 +1,99 @@
+<div class="row">
+	<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+		<div class="panel panel-default">
+			  <div class="panel-body">
+					Balance:<span class="balance"></span>$
+			  </div>
+			  <div class="panel-footer">
+                <a href="#add" data-toggle="modal"> <button type="button" class="btn btn-success btn-balance" >Add funds</button></a>
+				<a href="#history" data-toggle="modal"> <button type="button" class="btn btn-info btn-balance" >History</button></a>
+                <a href="#withdraw" data-toggle="modal"> <button type="button" class="btn btn-warning btn-balance" >Withdraw</button></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 1st -->
+
+<div id="add" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header add">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">Add funds</h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="input-group">
+							<span class="input-group-addon">$</span>
+							<input type="text" class="form-control data-toggle="tooltip" data-placement="left" title="Tooltip on left"">
+							<span class="input-group-addon">.00</span>
+						</div>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<div class="btn-group" data-toggle="buttons" style="width: 100%;">
+							<label class="btn btn-success" style="width: 33%;">
+								<input type="radio" name="options" id="option1">WebMoney
+							</label>
+							<label class="btn btn-success" style="width: 33%;">
+								<input type="radio" name="options" id="option2">PayPal
+							</label>
+							<label class="btn btn-success" style="width: 33%;">
+								<input type="radio" name="options" id="option3">Visa
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+				<button class="btn btn-success">Deposit</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 2nd -->
+
+<div id="history" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header history">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">History</h3>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+          		
+          	</div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 3rd -->
+
+
+
+<div id="withdraw" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header withdraw">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Withdraw</h3>
+        </div>
+        <div class="modal-body">
+            <p>One fine body…</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="btn btn-warning">Save changes</button>
+        </div>
+    </div>
+  </div>
+</div>
