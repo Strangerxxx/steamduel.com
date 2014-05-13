@@ -24,31 +24,35 @@ define(function(require){
 			},
 			handler: function(game, page){
 				if(page===null) page = 'duels';
-				require([
+				require([/*
 					'app/views/ContainerView',
 					'app/views/TopMenuView',
 					'app/views/LeftMenuView',
 					'app/views/PageContentView',
-					'app/views/PageWidgetView',
+					'app/views/PageWidgetView',*/
 					'app/models/Container'
 					],
-					function(ContainerView, TopMenuView,LeftMenuView, PageContentView, PageWidgetView, Container){
+					function(/*ContainerView, TopMenuView,LeftMenuView, PageContentView, PageWidgetView, */Container){
 						var	container = new Container.Main;
 						container.on('add', function(page){
 							page.fetch({
 								success: function(data){
-									var views = {
-										Container:		new ContainerView({model:data});
+									/*var views = {
+										Container:		new ContainerView({model: data}),
 										TopMenu:		new TopMenuView({model: data}),
 										LeftMenu:		new LeftMenuView({model: data}),
 										PageContent:	new PageContentView({model: data}),
 										PageWidget: 	new PageWidgetView({model: data})
 									};
 									views.Container.setElement($wrapper);
-									views.TopMenu.setElement($('div.TopMenu', views.Container.el));
-									views.LeftMenu.setElement($('div.LeftMenu', views.Container.el));
-									views.PageContent.setElement($('div.PageContent', views.Container.el));
-									views.PageWidget.setElement($('div.PageWidget', views.Container.el));
+									views.TopMenu.setElement($('div#TopMenu', views.Container.el));
+									views.LeftMenu.setElement($('div#LeftMenu', views.Container.el));
+									views.PageContent.setElement($('div#PageContent', views.Container.el));
+									views.PageWidget.setElement($('div#PageWidget', views.Container.el));
+									$.each(views, function(index, view) {
+										view.render();
+									});*/
+									console.log(data);
 								}
 							});
 							console.log('game='+page.get('game')+'\npage='+page.get('page'));
