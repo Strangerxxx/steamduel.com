@@ -58,6 +58,8 @@ define(function(require){
 							console.log('game='+page.get('game')+'\npage='+page.get('page'));
 						})
 						container.set([{game: game, page: page}]);
+						container.set([{game: 'csgo'}], {remove: false});
+						console.log(container);
 					});
 				/*require(['app/views/ContainerView', 'app/views/PageView', 'app/models/ContainerModel'], function(ContainerView, PageView, models){
 					var containerModel = new models.Container({game: game, page: page});

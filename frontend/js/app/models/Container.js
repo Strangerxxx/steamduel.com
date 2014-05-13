@@ -84,13 +84,16 @@ define(function(require){
 			initialize: function(){ console.log(this); },
 			sync: function (method, model, options){
 				if (method === 'read'){
-					console.log(find.Game.Name(this.game));
-					/*find.Game.Name(this.game).done(function(data){
+					//find.Game.Name(this.get('game')).done(function(data){console.log(data);});
+					var game = this.get('game');
+					var page = this.get('page');
+					find.Game.Name(game).done(function(data){
 						options.success({game: data});
-						find.Page.Name(data, this.page).done(function(data){
+						find.Page.Name(data, page).done(function(data){
 							options.success({page: data});
 						});
-					});*/
+					});
+					console.log(this);
 				}
 			}
 		}),
